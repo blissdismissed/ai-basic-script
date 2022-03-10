@@ -53,14 +53,17 @@ function generateText(text) {
         // .contents to change text
         textFrame.contents = text;
         var textRange = textFrame.textRange;
-        textRange.size = 36;
+        textRange.size = 18;
         textRange.justification = Justification.CENTER;
-        textFrame.position = [50, 100];
+        textFrame.position = [110, 80];
     }
 
 function generateLabel() {
         var doc = app.activeDocument;
-        var rectangle = doc.pathItems.add();
-        rectangle.stroked = true;
-        rectangle.setEntirePath([[10, 10], [10, 100], [250, 100], [250, 10], [10, 10]]);
+        // var rectangle = doc.pathItems.add();
+        // rectangle.stroked = true;
+        // rectangle.setEntirePath([[10, 10], [10, 100], [250, 100], [250, 10], [10, 10]]);
+
+        // var rect = doc.pathItems.rectangle( 100, 100, 200, 50 );
+        var rect = doc.pathItems.roundedRectangle(100, 100, 200, 50, 3 ,3);
     }
