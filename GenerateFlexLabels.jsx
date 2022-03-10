@@ -3,13 +3,21 @@ if(!app.homeScreenVisible) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }
 
-
     // main code
-    var myDocument = app.documents.add();
+    var docPreset = new DocumentPreset; 
+    docPreset.width = 600; 
+    docPreset.height = 500; 
+    docPreset.units = RulerUnits.Millimeters; 
+    docPreset.artboardLayout = DocumentArtboardLayout.GridByCol; 
+    docPreset.numArtboards = 1 
+    var myDocument = app.documents.addDocument(DocumentColorSpace.CMYK, docPreset);
+
+
+    // var myDocument = app.documents.add();
     myDocument.layers[0].name = "Background Layer";
 
     // create solid coloured bg
-    generateBackground();
+    // generateBackground();
 
     // create a layer for a triangle with just stroke
     var layerTwo = myDocument.layers.add();
@@ -47,12 +55,12 @@ function generateText(text) {
         var textRange = textFrame.textRange;
         textRange.size = 36;
         textRange.justification = Justification.CENTER;
-        textFrame.position = [doc.width*.5-textFrame.width*.5, doc.height*.5+textFrame.width*.5];
+        textFrame.position = [50, 100];
     }
 
 function generateLabel() {
         var doc = app.activeDocument;
         var rectangle = doc.pathItems.add();
         rectangle.stroked = true;
-        rectangle.setEntirePath([[10, 10], [10, 25], [25, 25], [25, 10], [10, 10]]);
+        rectangle.setEntirePath([[10, 10], [10, 100], [250, 100], [250, 10], [10, 10]]);
     }
