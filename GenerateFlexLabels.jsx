@@ -6,7 +6,7 @@ if (!app.homeScreenVisible) {
 // main code
 var docPreset = new DocumentPreset();
 docPreset.width = 1000;
-docPreset.height = 4000;
+docPreset.height = 3500;
 docPreset.units = RulerUnits.Millimeters;
 docPreset.artboardLayout = DocumentArtboardLayout.GridByCol;
 docPreset.numArtboards = 1;
@@ -18,10 +18,10 @@ var layerThree = myDocument.layers.add();
 layerThree.name = "Text Layer";
 
 // parameters
-var qty = 300;
+var qty = 500;
 
 // loop to create labels
-for (var i = 200; i < qty; i++) {
+for (var i = 0; i < qty; i++) {
   // create rectangle
   generateLabel(i);
 
@@ -46,13 +46,13 @@ function generateText(i) {
   textRange.justification = Justification.CENTER;
   if (i < 100) {
     textFrame.position = [103, 92 + i * 30];
-  } else if (100 < i < 200) {
+  } else if (100 < i && i < 200) {
     textFrame.position = [203, 92 + i * 30 - 3000];
-  } else if (200 < i < 300) {
+  } else if (200 < i && i < 300) {
     textFrame.position = [303, 92 + i * 30 - 6000];
-  } else if (300 < i < 400) {
+  } else if (300 < i && i < 400) {
     textFrame.position = [403, 92 + i * 30 - 9000];
-  } else if (400 < i < 500) {
+  } else if (400 < i && i < 500) {
     textFrame.position = [503, 92 + i * 30 - 12000];
   }
 }
@@ -68,7 +68,9 @@ function generateLabel(i) {
       1,
       1
     );
-  } else if (100 < i < 200) {
+    rect.strokeColor = makeColor(75, 0, 100, 0);
+    rect.strokeWidth = 0.5;
+  } else if (100 < i && i < 200) {
     var rect = doc.pathItems.roundedRectangle(
       100 + i * 30 - 3000,
       200,
@@ -77,7 +79,9 @@ function generateLabel(i) {
       1,
       1
     );
-  } else if (200 < i < 300) {
+    rect.strokeColor = makeColor(75, 0, 100, 0);
+    rect.strokeWidth = 0.5;
+  } else if (200 < i && i < 300) {
     var rect = doc.pathItems.roundedRectangle(
       100 + i * 30 - 6000,
       300,
@@ -86,7 +90,9 @@ function generateLabel(i) {
       1,
       1
     );
-  } else if (300 < i < 400) {
+    rect.strokeColor = makeColor(75, 0, 100, 0);
+    rect.strokeWidth = 0.5;
+  } else if (300 < i && i < 400) {
     var rect = doc.pathItems.roundedRectangle(
       100 + i * 30 - 9000,
       400,
@@ -95,7 +101,9 @@ function generateLabel(i) {
       1,
       1
     );
-  } else if (400 < i < 500) {
+    rect.strokeColor = makeColor(75, 0, 100, 0);
+    rect.strokeWidth = 0.5;
+  } else if (400 < i && i < 500) {
     var rect = doc.pathItems.roundedRectangle(
       100 + i * 30 - 12000,
       500,
@@ -104,9 +112,9 @@ function generateLabel(i) {
       1,
       1
     );
+    rect.strokeColor = makeColor(75, 0, 100, 0);
+    rect.strokeWidth = 0.5;
   }
-  rect.strokeColor = makeColor(75, 0, 100, 0);
-  rect.strokeWidth = 0.5;
 }
 
 function importQR(i) {
@@ -125,13 +133,13 @@ function importQR(i) {
   imagePlacedItem.resize(22.5, 22.5);
   if (i < 100) {
     imagePlacedItem.position = [137, 99.5 + i * 30];
-  } else if (100 < i < 200) {
+  } else if (100 < i && i < 200) {
     imagePlacedItem.position = [237, 99.5 + i * 30 - 3000];
-  } else if (200 < i < 300) {
+  } else if (200 < i && i < 300) {
     imagePlacedItem.position = [337, 99.5 + i * 30 - 6000];
-  } else if (300 < i < 400) {
+  } else if (300 < i && i < 400) {
     imagePlacedItem.position = [437, 99.5 + i * 30 - 9000];
-  } else if (400 < i < 500) {
+  } else if (400 < i && i < 500) {
     imagePlacedItem.position = [537, 99.5 + i * 30 - 12000];
   }
 }
