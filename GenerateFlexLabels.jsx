@@ -13,16 +13,16 @@ if(!app.homeScreenVisible) {
 
     // create a layer for a triangle with just stroke
     var layerTwo = myDocument.layers.add();
-    layerTwo.name = "Triangle Layer";
-    generateTriangle();
+    layerTwo.name = "Label Layer";
+    generateLabel();
 
     // create a new layer for the text
     var layerThree = myDocument.layers.add();
     layerThree.name = "Text Layer";
-    generateText("COMPANY_NAME");
+    generateText("SATFF020001");
 
     // save out png file of automated creation
-    myDocument.exportFile(File("~/Documents/test.png"), ExportType.PNG24);
+    // myDocument.exportFile(File("~/Documents/test.png"), ExportType.PNG24);
     
 
 function generateBackground() {
@@ -50,9 +50,9 @@ function generateText(text) {
         textFrame.position = [doc.width*.5-textFrame.width*.5, doc.height*.5+textFrame.width*.5];
     }
 
-function generateTriangle() {
+function generateLabel() {
         var doc = app.activeDocument;
-        var triangle = doc.pathItems.add();
-        triangle.stroked = true;
-        triangle.setEntirePath([[doc.width/2, 25], [25, doc.height-25], [doc.width-25, doc.height-25], [doc.width/2, 25]]);
+        var rectangle = doc.pathItems.add();
+        rectangle.stroked = true;
+        rectangle.setEntirePath([[10, 10], [10, 25], [25, 25], [25, 10], [10, 10]]);
     }
